@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Verdana', Arial, Helvetica, sans-serif, serif;
+            background-color: whitesmoke;
+        }
+
+        div{ border-radius: 18; }
+
+        #image-div {
+            display: flex;
+            overflow-x: scroll;
+            align-items: center;
+            scroll-behavior: smooth; 
+            background-color: whitesmoke;
+        }
+
+        #image-div img {
+            width: 100px; /* Kleinere Größe für Bilder in der Leiste */
+            height: auto;
+            margin-right: 10px;
+            cursor: pointer;            
+        }
+
+        #image-div img.selected { width: 400px; }
+
+        #text-div{ background-color: white; }
+
+        h1,p,h2,h3,li,ul{
+            background-color: white;
+            font-weight: lighter;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('#image-div img');
+            const selectedImage = images[0];
+            selectedImage.classList.add('selected');
+
+            images.forEach(function(image) {
+                image.addEventListener('click', function() {
+                    images.forEach(function(img) {
+                        img.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    // Nachdem das ausgewählte Bild aktualisiert wurde, wird die Scrollleiste angepasst
+                    const scrollContainer = document.getElementById('image-div');
+                    scrollContainer.scrollTo({
+                        left: this.offsetLeft - scrollContainer.offsetWidth / 2 + this.offsetWidth / 2,
+                        behavior: 'smooth' // Füge Scroll-Verhalten hinzu
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <div id="text-div">
+            <h1>Produkt Titel</h1>
+            <p>Kurze Zusammenfassung. Kurze Zusammenfassung.
+                Kurze Zusammenfassung.Kurze Zusammenfassung.
+                Kurze Zusammenfassung.Kurze Zusammenfassung.
+                Kurze Zusammenfassung.Kurze Zusammenfassung.
+            </p>  
+            <h2>Artikelmerkmale</h2>
+            <img src="https://drive.google.com/uc?export=view&id=1SlupjFGJNVBnsEtwwvhLU1uRskyXgPQ9/" alt="Bild 3"> 
+            <ul>
+                <li>Punkt 1</li>
+                <li>Punkt 1</li>
+                <li>Punkt 1</li>
+                <li>Punkt 1</li>
+                <li>Punkt 1</li>
+                <li>Punkt 1</li>
+            </ul>
+            <h2>Artikel Zustand</h2>
+            <p>Zustand des Artikels</p>
+        </div>
+        <div id="image-div">
+            <img src="https://drive.google.com/file/d/ç/view?usp=sharing" alt="Bild 1" class="selected"> 
+            <img src="http://drive.google.com/uc?export=view&id=http://drive.google.com/uc?export=view&id=" alt="Bild 2"> 
+            <img src="https://drive.google.com/uc?export=view&id=1SlupjFGJNVBnsEtwwvhLU1uRskyXgPQ9/" alt="Bild 3"> 
+            <img src="" alt="Bild 4"> 
+            <img src="" alt="Bild 5"> 
+        </div>
+        <div style="background-color: white;">
+            <h2 >Rückgabe</h2>
+            <p>Sehr geehrte/r eBay-Nutzer/in,
+                vielen Dank für Ihr Interesse an meinem Angebot. 
+                Bitte beachten Sie, dass es sich hierbei um einen Privatkauf handelt. 
+                Das bedeutet, dass ich als Privatperson verkaufe und keine Gewährleistung,
+                Garantie oder Rücknahme anbieten kann. Indem Sie auf dieses Angebot bieten oder es kaufen,
+                erklären Sie sich mit den folgenden Bedingungen einverstanden:
+            </p>
+                <ol style="background-color: white;">                    
+                    <li>
+                        <h3>Privatverkauf:</h3>
+                        <p>Ich bin kein gewerblicher Händler, sondern handle als Privatperson. Aus diesem Grund kann ich keinerlei Gewährleistung oder Garantie auf den angebotenen Artikel geben.</p>
+                    </li>
+                    <li>
+                        <h3>Zustand des Artikels:</h3>
+                        <p>Der Artikel wird in dem Zustand verkauft, wie er beschrieben wurde. Ich habe nach bestem Wissen und Gewissen alle relevanten Informationen zum Artikel angegeben. Eventuelle Mängel oder Defekte wurden ebenfalls erwähnt. Bitte lesen Sie die Artikelbeschreibung sorgfältig durch, um sich ein genaues Bild vom Zustand des Artikels zu machen.</p>
+                    </li>
+                    <li>
+                        <h3>Keine Rücknahme:</h3>
+                        <p>Da es sich um einen Privatverkauf handelt, schließe ich jegliche Rücknahme oder Umtausch des Artikels aus. Nach dem Kauf besteht kein Anspruch auf eine Rückgabe oder Rückerstattung.</p>
+                    </li>
+                    <li>
+                        <h3>Verantwortung des Käufers:</h3>
+                        <p>Als Käufer tragen Sie die volle Verantwortung für Ihre Kaufentscheidung. Sie sollten alle Fragen vor dem Kauf klären und gegebenenfalls zusätzliche Informationen anfordern. Bitte stellen Sie sicher, dass der Artikel Ihren Anforderungen und Erwartungen entspricht.</p>
+                    </li>
+                    <li>
+                        <h3>Versand und Verpackung:</h3>
+                        <p>Ich werde den Artikel sorgfältig verpacken und versenden, um einen sicheren Transport zu gewährleisten. Für eventuelle Schäden oder Verluste während des Versands übernehme ich jedoch keine Haftung.</p>
+                    </li>
+                </ol>
+            <p>Indem Sie auf dieses Angebot bieten oder den Artikel kaufen, 
+                bestätigen Sie, dass Sie die oben genannten Bedingungen gelesen 
+                haben und ihnen zustimmen. Bei Unklarheiten stehe ich Ihnen gerne 
+                vor dem Kauf zur Verfügung, um eventuelle Fragen zu beantworten.                
+                Vielen Dank für Ihr Verständnis und Ihr Interesse. Ich wünsche 
+                Ihnen viel Erfolg bei Ihrem Kauf!<br><br>               
+                Mit freundlichen Grüßen,<br><br>                
+                Sebastian Vargyas
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
